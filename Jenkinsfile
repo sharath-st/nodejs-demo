@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent { label "java-node" }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub-sharath14')
     }
@@ -24,11 +24,6 @@ pipeline {
             steps{
                 sh 'docker push sharath14/nodeapp:$BUILD_NUMBER'
             }
-        }
-}
-post {
-        always {
-            sh 'docker logout'
         }
     }
 }
