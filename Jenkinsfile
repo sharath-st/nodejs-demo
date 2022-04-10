@@ -1,7 +1,7 @@
 pipeline {
     agent { label "java-node" }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub-sharath14')
+    DOCKERHUB_CREDENTIALS = credentials('sharath14-dockerhub')
     }
     stages { 
         stage('SCM Checkout') {
